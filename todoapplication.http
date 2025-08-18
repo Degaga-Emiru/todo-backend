@@ -1,0 +1,185 @@
+@token = eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZWdvZW1pcnUiLCJpYXQiOjE3NTM2ODc0ODQsImV4cCI6MTc1Mzc3Mzg4NH0.9RA_MytNmMR2b1lbHlbdOLiNAdOF06X9uiBjYpv7Sgs
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###### Register user as admin
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "fantash",
+  "email": "fantash@example.com",
+  "password": "password123",
+  "role": ["admin"]
+}
+### to login for admin
+POST http://localhost:8080/api/auth/signin
+Content-Type: application/json
+
+{
+  "username": "degoemiru",
+  "password": "password123"
+
+}
+###  To Get all users
+GET http://localhost:8080/api/users
+Authorization: Bearer {{token}}
+
+### To get users byid
+GET http://localhost:8080/api/users/2
+Authorization: Bearer {{token}}
+
+###to delete user byId
+DELETE http://localhost:8080/api/users/20
+
+###to get all tasks
+GET http://localhost:8080/api/tasks
+Authorization: Bearer {{token}}
+
+### to get Task by ID
+GET http://localhost:8080/api/tasks/3
+Authorization: Bearer {{token}}
+
+###Promote/Demote User
+PUT http://localhost:8080/api/users/3/role
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "role": "admin"
+}
+### to update the user role
+PATCH http://localhost:8080/api/users/2/role?newRole=admin
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "title": "Admin-assigned Task",
+  "description": "Complete this ASAP",
+ "completed": false,
+ "userId": 4
+}
+###
+POST http://localhost:8080/api/auth/signin
+Content-Type: application/json
+
+{
+  "username": "Elijah",
+  "password": "password1234"
+}
+
+### to registers new users as the role users
+
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "Elijah",
+  "email": "elijah@example.com",
+  "password": "password1234",
+  "role": ["user"]
+}
+###
+POST http://localhost:8080/api/auth/signin
+Content-Type: application/json
+
+{
+"username": "degoemiru",
+"password": "password123"
+
+}
+### to create the users
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "bonsa",
+  "email": "bonsa@example.com",
+  "password": "password12345",
+  "role": ["user"]
+}
+### to create the users
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "Eyu",
+  "email": "eyu@example.com",
+  "password": "password123456",
+  "role": ["user"]
+}
+
+
+
+### to create the users
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "bonsa",
+  "email": "bonsa@example.com",
+  "password": "password12345",
+  "role": ["user"]
+}
+###to add tasks
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Test API with postman",
+  "description": "Send request for updating, creating, deleting ",
+  "due_date": "2025-07-29",
+  "completed": false
+}
+###
+PUT http://localhost:8080/api/tasks/6
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Tested API with postman",
+  "description": "Send request for updating, creating, deleting",
+  "completed": true
+}
+### to delete the task byID
+DELETE http://localhost:8080/api/tasks/3
+Authorization: Bearer {{token}}
+
+###Toggle Task Completion
+PATCH http://localhost:8080/api/tasks/5/complete?completed=true
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###to update user profile
+PUT http://localhost:8080/api/users/3
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "bonny",
+  "email": "bonny@example.com",
+  "password": "newPassword123"
+}
+
+###to add tasks
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Learn Spring",
+  "description": "learn the spring security, jwt, role based authentication",
+  "completed": false
+}
+

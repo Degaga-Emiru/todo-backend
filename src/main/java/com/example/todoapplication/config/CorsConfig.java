@@ -1,5 +1,5 @@
 package com.example.todoapplication.config;
-
+// config file to interact with front end 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
